@@ -66,10 +66,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/sign-up-static', [PageController::class, 'signup'])->name('sign-up-static'); 
 	
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-
-	Route::get('/gestion-de-usuarios', [PageController::class, 'userManagement'])->name('admin.user-management');
+	
 	Route::get('/estadisticas', [PageController::class, 'index'])->name('admin.index');
-
-
+	Route::get('/gestion-de-usuarios', [PageController::class, 'userManagement'])->name('admin.user-management');
+	Route::get('/medical-appointment', [PageController::class, 'medicalAppointment'])->name('admin.medical-appointment');
+	Route::post('/delete-medical-appointment', [PageController::class, 'deleteMedicalAppointment'])->name('admin.delete-medical-appointment');
 
 });

@@ -31,7 +31,7 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link">
+                <a class="nav-link {{ isset($medical_appointment_page) ? 'active' : '' }}" href="{{ route('admin.medical-appointment') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-world-2 text-success text-sm opacity-10"></i>

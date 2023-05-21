@@ -21,6 +21,16 @@ return new class extends Migration
             $table->string('more_details')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('date', function (Blueprint $table) {
+            $table->id();
+            $table->string('client_name')->nullable();
+            $table->string('motive_date')->nullable();
+            $table->string('treatment_type')->nullable();
+            $table->string('more_details')->nullable();
+            $table->dateTime('date')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MedicalAppointment;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -55,5 +56,19 @@ class PageController extends Controller
         $users = User::all();
         $user_page = true;
         return view("pages.user-management", compact('users','user_page'));
+    }
+
+    public function medicalAppointment()
+    {
+        $medical_appointments = MedicalAppointment::orderBy('created_at', 'DESC')->simplePaginate(10);
+        $medical_appointment_page = true;
+        return view("pages.medical-appointment", compact('medical_appointments', 'medical_appointment_page'));
+    }
+
+    public function deleteMedicalAppointment(Request $request)
+    {
+        DB::table('medical_appointment')->where('id',$request->id)->delete();
+        return redirect()->action([PageController::class, 'medicalAppointment'])->with('message', 'Registro eliminado correctamente ');
+
     }
 }
