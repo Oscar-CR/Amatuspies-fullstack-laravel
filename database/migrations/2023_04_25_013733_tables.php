@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('date', function (Blueprint $table) {
+        Schema::create('medical_date', function (Blueprint $table) {
             $table->id();
             $table->string('client_name')->nullable();
             $table->string('motive_date')->nullable();
@@ -40,6 +40,7 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('medical_appointment');
+        Schema::dropIfExists('medical_date');
     }
 };

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\MedicalAppointment;
+use App\Models\MedicalDate;
 use App\Models\User;
+use Faker\Provider\Medical;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -70,5 +72,51 @@ class PageController extends Controller
         DB::table('medical_appointment')->where('id',$request->id)->delete();
         return redirect()->action([PageController::class, 'medicalAppointment'])->with('message', 'Registro eliminado correctamente ');
 
+    }
+
+    public function date()
+    {  
+        $medical_dates = MedicalDate::simplePaginate(10);
+
+        $medical_page = 'medical_page';
+        return view("pages.medical-date", compact('medical_dates', 'medical_page'));
+    }
+
+
+    public function createDate(Request $request)
+    {
+ 
+        $create_medical_date = new MedicalDate();
+        $create_medical_date->client_name = $request->client_name;
+        $create_medical_date->motive_date = $request->motive_date;
+        $create_medical_date->treatment_type = $request->treatment_type;
+        $create_medical_date->more_details = $request->more_details;
+        $create_medical_date->date = $request->date;
+        $create_medical_date->save();
+        return redirect()->back()->with('message', 'Cita guardada correctamente');
+
+    }
+
+    public function editDate()
+    {
+        # code...
+    }
+
+    public function updateDate(Request $request)
+    {
+        DB::table('medical_date')->where('id',$request->id)->update([
+            'client_name' => $request->client_name,
+            'motive_date' => $request->motive_date,
+            'treatment_type' => $request->treatment_type,
+            'more_details' =>$request->more_details,
+            'date' =>$request->date
+        ]);
+        return redirect()->back()->with('message', 'Cita actualizada correctamente');
+    }
+
+    public function deleteDate(Request $request)
+    {
+        DB::table('medical_date')->where('id',$request->id)->delete();
+        return redirect()->back()->with('message', 'Cita eliminada correctamente');
     }
 }

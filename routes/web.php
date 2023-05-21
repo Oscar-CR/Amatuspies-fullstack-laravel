@@ -69,7 +69,13 @@ Route::group(['middleware' => 'auth'], function () {
 	
 	Route::get('/estadisticas', [PageController::class, 'index'])->name('admin.index');
 	Route::get('/gestion-de-usuarios', [PageController::class, 'userManagement'])->name('admin.user-management');
-	Route::get('/medical-appointment', [PageController::class, 'medicalAppointment'])->name('admin.medical-appointment');
+	Route::get('/solicitudes', [PageController::class, 'medicalAppointment'])->name('admin.medical-appointment');
 	Route::post('/delete-medical-appointment', [PageController::class, 'deleteMedicalAppointment'])->name('admin.delete-medical-appointment');
+
+	Route::get('/citas', [PageController::class, 'date'])->name('admin.date');
+	Route::post('/crear-citas', [PageController::class, 'createDate'])->name('admin.create-date');
+	Route::post('/editar-cita/{$id}', [PageController::class, 'editDate'])->name('admin.edit-date');
+	Route::post('/actualizar-cita', [PageController::class, 'updateDate'])->name('admin.update-date');
+	Route::post('/eliminar-cita', [PageController::class, 'deleteDate'])->name('admin.delete-date');
 
 });
