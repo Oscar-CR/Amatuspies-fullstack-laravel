@@ -8,8 +8,8 @@
             <div class="card mb-4">
                 <div class="card-header pb-0">
 
-                <div class="d-flex justify-content-between">
-                    <h6>CITAS</h6>
+                <div class="d-flex justify-content-between pb-0">
+                    <h6>Citas</h6>
 
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
                     <i class="fa fa-plus me-3" aria-hidden="true"></i>
@@ -30,13 +30,13 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7">#</th>
-                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7">Cliente</th>
-                                    <th class="text-uppercase text-secondary font-weight-bolder opacity-7 ps-2">Motivo</th>
-                                    <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Tratamiento</th>
-                                    <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Detalles adicionales</th>
-                                    <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Fecha</th>
-                                    <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-7">Opciones</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cliente</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Motivo</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tratamiento</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Detalles adicionales</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
