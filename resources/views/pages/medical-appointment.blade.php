@@ -2,6 +2,7 @@
 
 @section('content')
 @include('layouts.navbars.auth.topnav', ['title' => 'Solicitudes Recibidas'])
+<div class="container-fluid">
 <div class="row mt-4 mx-4">
     <div class="col-12">
 
@@ -94,12 +95,16 @@
         </div>
     </div>
 </div>
+</div>
 
+@endsection
+@push('js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-@stop
-@section('scripts')
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+
         $('.form-delete').submit(function(e) {
             e.preventDefault();
 
@@ -118,5 +123,6 @@
                 }
             })
         });
+    });
     </script>
-@stop
+@endpush

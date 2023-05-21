@@ -8,23 +8,27 @@ use App\Models\User;
 use Faker\Provider\Medical;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
 
     public function index()
     {
+
+        $today =Carbon::now();
+        $format_day = date('Y-m-d');
+
         $users = User::all()->count();
-
         $medical_appointment = MedicalAppointment::all()->count();
-
-        $dates = 0;
-
-        $sales = 0;
+        $dates = MedicalDate::all()->count();
+        $today_dates = MedicalDate::whereDate('date',$format_day)->get()->count();
+        $dates_data = MedicalDate::all();
+        $today_dates_data = MedicalDate::whereDate('date',$format_day)->get();
 
         $home_page = 'home_page';
 
-        return view("pages.dashboard", compact('users', 'medical_appointment', 'dates', 'sales' ,'home_page'));
+        return view("pages.dashboard", compact('users', 'medical_appointment', 'dates', 'today_dates' ,'home_page', 'dates_data', 'today_dates_data'));
 
     }
 

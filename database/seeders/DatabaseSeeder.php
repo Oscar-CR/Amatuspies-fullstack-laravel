@@ -16,11 +16,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'username' => 'admin',
-            'firstname' => 'Admin',
-            'lastname' => 'Admin',
+            'name' => 'Gabriela',
+            'lastname' => 'Tellez Garcia',
             'email' => 'admin@admin.com',
             'password' => bcrypt('password')
+        ]);
+
+        DB::table('medical_appointment')->insert([
+            'name' => 'jorge Rivero',
+            'email' => 'jrm3108@gmail.com',
+            'motive' => 'dolor pie izquierdo urge',
+            'more_details' => bcrypt('password')
         ]);
     }
 }

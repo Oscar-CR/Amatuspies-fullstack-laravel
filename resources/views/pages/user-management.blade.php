@@ -20,9 +20,9 @@
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Roles</th>
-                                    <th
+                                   <!--  <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Opciones</th>
+                                        Opciones</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,12 +41,12 @@
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-sm font-weight-bold mb-0">Administrador</p>
                                     </td>
-                                    <td class="align-middle text-end">
+                                   <!--  <td class="align-middle text-end">
                                         <div class="d-flex px-3 py-1 justify-content-center align-items-center">
                                             <p class="text-sm font-weight-bold mb-0"></p>
                                             <p class="text-sm font-weight-bold mb-0 ps-2"></p>
                                         </div>
-                                    </td>
+                                    </td> -->
                                 </tr>
                                 @endforeach
                             </tbody>
